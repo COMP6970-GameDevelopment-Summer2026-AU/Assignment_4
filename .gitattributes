@@ -1,0 +1,155 @@
+# Unity .gitattributes — Endless Courier 2D (Assignment 4)
+# Ensures consistent line endings and binary handling across all platforms
+# so the project reproduces identically after git clone on Windows/Mac/Linux
+#
+# Requires Git LFS installed: https://git-lfs.github.com
+# Run once after clone: git lfs install
+
+# ── Attribute macros ──────────────────────────────────────────────────────────
+[attr]lfs               filter=lfs diff=lfs merge=lfs -text
+[attr]unity-json        eol=lf linguist-language=json
+[attr]unity-yaml        merge=unityyamlmerge eol=lf linguist-language=yaml
+
+# ── Unity C# source ───────────────────────────────────────────────────────────
+*.cs                    text eol=lf diff=csharp
+*.cginc                 text eol=lf
+*.compute               text eol=lf linguist-language=hlsl
+*.hlsl                  text eol=lf linguist-language=hlsl
+*.shader                text eol=lf
+
+# ── Unity JSON files ──────────────────────────────────────────────────────────
+*.asmdef                unity-json
+*.asmref                unity-json
+*.inputactions          unity-json
+*.shadergraph           unity-json
+*.shadersubgraph        unity-json
+*.index                 unity-json
+
+# ── Unity UI Toolkit ──────────────────────────────────────────────────────────
+*.tss                   text eol=lf diff=css
+*.uss                   text eol=lf diff=css
+*.uxml                  text eol=lf linguist-language=xml
+
+# ── Unity YAML (scene, prefab, asset files) ───────────────────────────────────
+# unityyamlmerge is Unity's smart merge tool — prevents scene file conflicts
+*.anim                  unity-yaml
+*.asset                 unity-yaml
+*.brush                 unity-yaml
+*.controller            unity-yaml
+*.flare                 unity-yaml
+*.fontsettings          unity-yaml
+*.giparams              unity-yaml
+*.guiskin               unity-yaml
+*.lighting              unity-yaml
+*.mask                  unity-yaml
+*.mat                   unity-yaml
+*.meta                  unity-yaml
+*.mixer                 unity-yaml
+*.overrideController    unity-yaml
+*.playable              unity-yaml
+*.prefab                unity-yaml
+*.preset                unity-yaml
+*.renderTexture         unity-yaml
+*.scenetemplate         unity-yaml
+*.shadervariants        unity-yaml
+*.signal                unity-yaml
+*.spriteatlas           unity-yaml
+*.spriteatlasv2         unity-yaml
+*.terrainlayer          unity-yaml
+*.unity                 unity-yaml
+*.physicMaterial        unity-yaml
+*.physicsMaterial2D     unity-yaml
+
+# ── Tile assets (used by this project) ───────────────────────────────────────
+*.tile                  unity-yaml
+*.palette               unity-yaml
+
+# ── Binary Unity files → LFS ──────────────────────────────────────────────────
+*.cubemap               lfs
+*.unitypackage          lfs
+LightingData.asset      binary
+
+# ── Audio → LFS ───────────────────────────────────────────────────────────────
+# Project uses: pickup.ogg, success.ogg, bump.ogg, click.ogg
+*.aif                   lfs
+*.aiff                  lfs
+*.mp3                   lfs
+*.ogg                   lfs
+*.wav                   lfs
+*.it                    lfs
+*.mod                   lfs
+*.s3m                   lfs
+*.xm                    lfs
+
+# ── Images / Sprites → LFS ────────────────────────────────────────────────────
+# Project sprites: car.png, arrow.png, target.png, trophy.png,
+#                  cone_straight.png, rock1.png, oil.png + road/grass tiles
+*.bmp                   lfs
+*.exr                   lfs
+*.gif                   lfs
+*.hdr                   lfs
+*.jpeg                  lfs
+*.jpg                   lfs
+*.png                   lfs
+*.psd                   lfs
+*.tga                   lfs
+*.tif                   lfs
+*.tiff                  lfs
+*.webp                  lfs
+*.iff                   lfs
+*.pict                  lfs
+
+# ── 3D Models → LFS ───────────────────────────────────────────────────────────
+*.fbx                   lfs
+*.FBX                   lfs
+*.obj                   lfs
+*.blend                 lfs
+*.blend1                lfs
+*.3ds                   lfs
+*.dae                   lfs
+*.dxf                   lfs
+*.ma                    lfs
+*.mb                    lfs
+*.max                   lfs
+*.ply                   lfs
+*.stl                   lfs
+*.c4d                   lfs
+*.skp                   lfs
+*.ztl                   lfs
+
+# ── Video → LFS ───────────────────────────────────────────────────────────────
+*.mp4                   lfs
+*.mov                   lfs
+*.avi                   lfs
+*.wmv                   lfs
+*.ogv                   lfs
+*.webm                  lfs
+
+# ── Compiled / Native libraries → LFS ────────────────────────────────────────
+*.dll                   lfs
+*.pdb                   lfs
+*.so                    lfs
+*.a                     lfs
+
+# ── Fonts → LFS ───────────────────────────────────────────────────────────────
+*.otf                   lfs
+*.ttf                   lfs
+
+# ── Archives → LFS ───────────────────────────────────────────────────────────
+*.zip                   lfs
+*.7z                    lfs
+*.gz                    lfs
+*.rar                   lfs
+*.tar                   lfs
+
+# ── Executables → LFS ────────────────────────────────────────────────────────
+*.exe                   lfs
+*.apk                   lfs
+*.pdf                   lfs
+
+# ── Spine ────────────────────────────────────────────────────────────────────
+*.skel.bytes            lfs
+
+# ── GitHub stats — exclude generated/vendor files ────────────────────────────
+Assets/Plugins/**           linguist-generated
+Packages/packages-lock.json linguist-generated
