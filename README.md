@@ -18,6 +18,14 @@ git lfs pull
 # Unity will reimport assets automatically
 ```
 
+---
+
+## Gameplay Demo
+
+[![Endless Courier 2D — Assignment 4 Demo](https://img.youtube.com/vi/laaz0N-OjtI/maxresdefault.jpg)](https://youtu.be/laaz0N-OjtI)
+
+> Click the thumbnail above to watch the full gameplay demo on YouTube.
+
 
 ## How to Run
 
