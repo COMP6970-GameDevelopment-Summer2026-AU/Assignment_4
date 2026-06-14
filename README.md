@@ -4,6 +4,20 @@
 **Engine:** Unity 2D (Universal Render Pipeline)
 
 ---
+```aiignore
+# 1. Install Git LFS (one time per machine)
+git lfs install
+
+# 2. Clone the repo
+git clone https://github.com/COMP6970-GameDevelopment-Summer2026-AU/Assignment_4.git
+
+# 3. Pull all LFS files (sprites, audio)
+git lfs pull
+
+# 4. Open the project in Unity
+# Unity will reimport assets automatically
+```
+
 
 ## How to Run
 
